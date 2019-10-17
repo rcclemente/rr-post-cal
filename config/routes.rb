@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  get 'pages/index'
-  root 'pages#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # For details on the DSL available within this file
+  # see http://guides.rubyonrails.org/routing.html
 
+  # get 'pages/index'
+
+  root 'pages#index'
+  #
+  # IMPORTANT #
+  # This `match` must be the *last* route in routes.rb
+  match '*path', to: 'pages#index', via: :all
 end
